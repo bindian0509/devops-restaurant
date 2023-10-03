@@ -5,10 +5,13 @@ package com.bharat.devops.restaurant.controller;
  * @created Thursday, 11 January 2024
  */
 
+import com.bharat.devops.restaurant.dto.RestaurantDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/restaurant")
