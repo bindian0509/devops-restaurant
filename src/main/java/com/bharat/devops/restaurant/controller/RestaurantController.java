@@ -6,6 +6,7 @@ package com.bharat.devops.restaurant.controller;
  */
 
 import com.bharat.devops.restaurant.dto.RestaurantDTO;
+import com.bharat.devops.restaurant.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,6 @@ public class RestaurantController {
 
     @Autowired
     RestaurantService restaurantService;
-
-
 
     @GetMapping("/fetchAllRestaurants")
     public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurants(){
