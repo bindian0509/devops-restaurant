@@ -23,7 +23,7 @@ public class RestaurantController {
     RestaurantService restaurantService;
 
     @GetMapping("/fetchAllRestaurants")
-    public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurants(){
+    public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurants() {
         List<RestaurantDTO> allRestaurants = restaurantService.findAllRestaurants();
         return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
     }
@@ -38,5 +38,4 @@ public class RestaurantController {
     public ResponseEntity<RestaurantDTO> findRestaurantById(@PathVariable Integer id) {
         return restaurantService.fetchRestaurantById(id);
     }
-
-
+}
