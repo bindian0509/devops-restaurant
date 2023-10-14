@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/restaurant")
@@ -36,6 +37,10 @@ public class RestaurantController {
 
     @GetMapping("fetchById/{id}")
     public ResponseEntity<RestaurantDTO> findRestaurantById(@PathVariable Integer id) {
-        return restaurantService.fetchRestaurantById(id);
+        ResponseEntity<RestaurantDTO> restaurantDTOResponseEntity = restaurantService.fetchRestaurantById(id);
+        if (Objects.isNull(restaurantDTOResponseEntity)) {
+            throw new RuntimeException();
+        }
+        return restaurantDTOResponseEntity;
     }
 }
