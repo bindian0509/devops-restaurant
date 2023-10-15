@@ -23,19 +23,19 @@ public class RestaurantController {
     @Autowired
     RestaurantService restaurantService;
 
-    @GetMapping("/fetchAllRestaurants")
+    @GetMapping
     public ResponseEntity<List<RestaurantDTO>> fetchAllRestaurants() {
         List<RestaurantDTO> allRestaurants = restaurantService.findAllRestaurants();
         return new ResponseEntity<>(allRestaurants, HttpStatus.OK);
     }
 
-    @PostMapping("/addRestaurant")
+    @PostMapping
     public ResponseEntity<RestaurantDTO> saveRestaurant(@RequestBody RestaurantDTO restaurantDTO) {
         RestaurantDTO restaurantAdded = restaurantService.addRestaurantInDB(restaurantDTO);
         return new ResponseEntity<>(restaurantAdded, HttpStatus.CREATED);
     }
 
-    @GetMapping("fetchById/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<RestaurantDTO> findRestaurantById(@PathVariable Integer id) {
         ResponseEntity<RestaurantDTO> restaurantDTOResponseEntity = restaurantService.fetchRestaurantById(id);
         if (Objects.isNull(restaurantDTOResponseEntity)) {
