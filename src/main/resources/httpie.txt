@@ -1,7 +1,9 @@
 -- get all restaurants
-http :9091/restaurant/fetchAllRestaurants
+http :9091/restaurant
 
+-- get a restaurant by Id (numeric)
+http :9091/restaurant/1
 
 -- create a new restaurant
-http POST :9091/restaurant/addRestaurant name="Soda Bottle Openerwala" address="john@root.com" city="Mumbai" restaurantDescription="36 ChinaTown, Borivali East, Mumbi, MH, INDIA"
-http POST :9091/restaurant/addRestaurant name="Khau Gali" address="john2@root.com" city="Mumbai" restaurantDescription="Md Ali Road, Mumbai, MH, INDIA"
+http POST :9091/restaurant name="Soda Bottle Openerwala" address="john@root.com" city="Mumbai" restaurantDescription="36 ChinaTown, Borivali East, Mumbi, MH, INDIA"
+http POST :9091/restaurant name="Khau Gali" address="john2@root.com" city="Mumbai" restaurantDescription="Md Ali Road, Mumbai, MH, INDIA"
